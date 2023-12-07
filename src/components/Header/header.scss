@@ -1,0 +1,27 @@
+header {
+    @apply w-full sticky top-0 p-4 flex justify-center items-center bg-white shadow;
+
+    .header-container {
+        @apply w-full max-w-screen-xl flex justify-start items-center;
+
+        .header-content {
+            @apply w-full flex justify-between items-center;
+
+            .logo-name {
+                @apply w-full flex justify-start items-center gap-2;
+
+                .logo-container {
+                    @apply w-6 aspect-auto object-cover object-center;
+
+                    img {
+                        @apply w-full aspect-auto;
+                    }
+                }
+
+                h1 {
+                    @apply text-xl font-bold;
+                }
+            }
+        }
+    }
+}
