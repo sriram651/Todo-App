@@ -16,6 +16,15 @@ module.exports = {
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
+      keyframes: {
+        openLeft: {
+          "0%": { opacity: 0, transform: "translateX(20%)" },
+          "100%": { opacity: 1, transform: "translateX(0%)" },
+        }
+      }
+    },
+    animation: {
+      openLeft: "openLeft 0.3s ease-in-out",
     },
   },
   plugins: [],
