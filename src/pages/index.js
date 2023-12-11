@@ -1,6 +1,8 @@
 "use client";
 
 import Head from "next/head";
+import TodoItem from "@/components/TodoItem/TodoItem";
+import { todoList } from "@/constants/todoMock";
 
 export default function Home() {
   return (
@@ -8,7 +10,11 @@ export default function Home() {
       <Head>
         <title>Home | Todo App</title>
       </Head>
-      <h1 className="text-2xl">Todo App Todo App Todo App Todo App Todo App Todo App Todo App Todo App Todo App Todo App Todo App</h1>
+      <ul className="todo-list w-full flex flex-col items-center justify-start gap-4">
+        {todoList?.map((todo, index) =>(
+          <TodoItem key={index} completed={todo.completed} content={todo.content} />
+        ))}
+      </ul>
     </>
   )
 }
