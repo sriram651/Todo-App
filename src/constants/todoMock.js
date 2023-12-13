@@ -1,4 +1,4 @@
-export const todoList = [
+export const todoListItems = [
     {
         content: "Task 1",
         completed: true,
