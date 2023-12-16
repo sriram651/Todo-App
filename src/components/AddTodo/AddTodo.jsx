@@ -1,20 +1,24 @@
 import React, { useState } from 'react'
 
 import Icon from '../Icon/Icon'
+import { useLocalStorage } from '@/hooks/useLocalStorage';
 
-export default function AddTodo() {
+export default function AddTodo({ onAddTodo }) {
     const [todoDesc, setTodoDesc] = useState("");
+    const { getItem, setItem } = useLocalStorage("todoList");
 
     function addNewTodo(e) {
         e.preventDefault();
-        let allTodos = JSON.parse(localStorage.getItem("todoList"));
+        console.log(getItem())
+        let allTodos = getItem();
         const newTodo = {
             content: todoDesc,
             completed: false,
         };
 
         allTodos.push(newTodo);
-        localStorage.setItem("todoList", JSON.stringify(allTodos));
+        onAddTodo(allTodos);
+        setItem(allTodos);
     }
 
     return (
