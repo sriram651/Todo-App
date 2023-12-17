@@ -1,28 +1,27 @@
-import React, { useState } from 'react'
+import React, { useState } from "react"
 
-import Icon from '../Icon/Icon'
-import { useLocalStorage } from '@/hooks/useLocalStorage';
+import Icon from "../Icon/Icon"
+import { useLocalStorage } from "@/hooks/useLocalStorage";
 
-export default function AddTodo({ onAddTodo }) {
+export default function AddTodo({ onModifyTodo }) {
     const [todoDesc, setTodoDesc] = useState("");
     const { getItem, setItem } = useLocalStorage("todoList");
 
     function addNewTodo(e) {
         e.preventDefault();
-        console.log(getItem())
         let allTodos = getItem();
         const newTodo = {
             content: todoDesc,
             completed: false,
         };
 
-        allTodos.push(newTodo);
-        onAddTodo(allTodos);
+        allTodos = [newTodo, ...allTodos];
+        onModifyTodo(allTodos);
         setItem(allTodos);
     }
 
     return (
-        <section className='add-todo'>
+        <section className="add-todo">
             <div className="add-todo-container">
                 <form onSubmit={addNewTodo}>
                     <input

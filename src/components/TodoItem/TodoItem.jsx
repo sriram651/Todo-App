@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState } from "react"
 
-import Icon from '../Icon/Icon'
-import { useLocalStorage } from '@/hooks/useLocalStorage';
+import Icon from "../Icon/Icon"
+import { useLocalStorage } from "@/hooks/useLocalStorage";
 
 export default function TodoItem({ todo, handleDelete }) {
     const [checked, setChecked] = useState(todo.completed);
@@ -12,7 +12,7 @@ export default function TodoItem({ todo, handleDelete }) {
         let allTodos = getItem();
     }
     return (
-        <li className='todo-item'>
+        <li className="todo-item">
             <div className="todo-container">
                 <div className="check-content" onClick={modifyChecked}>
                     <input type="checkbox" checked={checked} onChange={modifyChecked} />
@@ -20,7 +20,7 @@ export default function TodoItem({ todo, handleDelete }) {
                 </div>
                 <div className="action-container">
                     <button type="button" onClick={() => handleDelete(todo)}>
-                        <Icon name='TrashIcon' width={20} height={20} />
+                        <Icon name="TrashIcon" width={20} height={20} />
                     </button>
                 </div>
             </div>

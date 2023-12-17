@@ -9,6 +9,7 @@
 @import "@/components/Header/header.scss";
 @import "@/components/TodoItem/todoItem.scss";
 @import "@/components/AddTodo/AddTodo.scss";
+@import "@/components/EmptyState/EmptyState.scss";
 
 $foreground-rgb: rgb(0, 0, 0);
 $background-start-rgb: rgb(214, 219, 220);
@@ -40,5 +41,5 @@ body {
 }
 
 main {
-    @apply w-full max-w-screen-xl min-h-screen mx-auto py-4;
+    @apply w-full max-w-screen-xl mx-auto py-4;
 }
