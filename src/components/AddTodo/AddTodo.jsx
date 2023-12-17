@@ -18,6 +18,7 @@ export default function AddTodo({ onModifyTodo }) {
         allTodos = [newTodo, ...allTodos];
         onModifyTodo(allTodos);
         setItem(allTodos);
+        setTodoDesc("");
     }
 
     return (
