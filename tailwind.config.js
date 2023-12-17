@@ -11,6 +11,16 @@ module.exports = {
       display: ['Josefin Sans'],
     },
     extend: {
+      backgroundColor: {
+        primary: "#ffffff",
+        primaryDark: "#111827",
+        secondary: "#F1F5F9",
+        secondaryDark: "#1E293B",
+      },
+      borderColor: {
+        primary: "#000000",
+        primaryDark: "#ffffff",
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
