@@ -1,5 +1,5 @@
 .empty-state {
-    @apply w-max max-w-sm md:max-w-2xl mt-10 md:mt-16 px-4 py-6 md:px-10 md:py-16 border-2 border-gray-400 bg-gray-100 border-dashed rounded-xl;
+    @apply w-max max-w-full md:max-w-2xl mt-10 md:mt-16 px-4 py-6 md:px-10 md:py-16 border-2 border-gray-400 bg-gray-100 border-dashed rounded-xl;
 
     .empty-state-container {
         @apply w-max max-w-full flex justify-center items-center;
