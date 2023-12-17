@@ -30,11 +30,16 @@ module.exports = {
         openLeft: {
           "0%": { opacity: 0, transform: "translateX(20%)" },
           "100%": { opacity: 1, transform: "translateX(0%)" },
+        },
+        appearUpwards: {
+          "0%": { opacity: 0, transform: "translateY(20%)" },
+          "100%": { opacity: 1, transform: "translateY(0%)" },
         }
       }
     },
     animation: {
       openLeft: "openLeft 0.3s ease-in-out",
+      appearUpwards: "appearUpwards 0.3s ease-in-out",
     },
   },
   plugins: [],
