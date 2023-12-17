@@ -32,7 +32,7 @@ export default function AddTodo({ onModifyTodo }) {
                         value={todoDesc}
                         onChange={(e) => setTodoDesc(e.target.value)}
                     />
-                    <button type="submit">
+                    <button type="submit" disabled={todoDesc === ""}>
                         <Icon name="PlusIcon" width={20} height={20} />
                         Add Todo
                     </button>

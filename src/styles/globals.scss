@@ -18,7 +18,7 @@ $background-end-rgb: rgb(255, 255, 255);
 @media (prefers-color-scheme: dark) {
     $foreground-rgb: rgb(255, 255, 255);
     $background-start-rgb: rgb(0, 0, 0);
-    $background-end-rgb: rgb(0, 0, 0);
+    $background-end-rgb: rgb(51 65 85);
 }
 
 * {
@@ -36,8 +36,7 @@ $background-end-rgb: rgb(255, 255, 255);
 }
 
 body {
-    color: $foreground-rgb;
-    background: $background-end-rgb;
+    @apply text-black dark:text-white bg-primary dark:bg-primaryDark;
 }
 
 main {
