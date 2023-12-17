@@ -43,7 +43,7 @@ export default function Home() {
           <h1 className="text-3xl font-bold w-full text-left">Your Todo&apos;s</h1>
           {todoList?.length !== 0 ? (
             todoList?.map((todo, index) => (
-            <TodoItem key={index} todo={todo} handleDelete={deleteItem} />
+            <TodoItem key={index} index={index} todo={todo} handleDelete={deleteItem} />
           ))) : (
             <EmptyState emptyStateMessage="There are no tasks on your to-do list. Let's get started by adding a new one!"/>
           )}

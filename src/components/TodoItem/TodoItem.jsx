@@ -3,14 +3,20 @@ import React, { useState } from "react"
 import Icon from "../Icon/Icon"
 import { useLocalStorage } from "@/hooks/useLocalStorage";
 
-export default function TodoItem({ todo, handleDelete }) {
+export default function TodoItem({ index, todo, handleDelete }) {
     const [checked, setChecked] = useState(todo.completed);
-    const { getItem } = useLocalStorage("todoList");
+    const { getItem, setItem } = useLocalStorage("todoList");
 
-    function modifyChecked(todo) {
+    function modifyChecked() {
         setChecked(!checked);
         let allTodos = getItem();
+        allTodos[index] = {
+            ...allTodos[index],
+            completed: !allTodos[index].completed,
+        }
+        setItem(allTodos);
     }
+
     return (
         <li className="todo-item">
             <div className="todo-container">
