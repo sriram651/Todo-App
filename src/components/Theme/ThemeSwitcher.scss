@@ -1,5 +1,5 @@
 .theme-switcher {
-    @apply w-max flex p-4 flex-row items-center gap-2 whitespace-nowrap rounded-xl active:bg-black/30 dark:active:bg-black/30 lg:hover:bg-black/30 lg:dark:hover:bg-black/30;
+    @apply w-max flex p-2 flex-row items-center gap-2 whitespace-nowrap rounded-lg active:bg-black/30 dark:active:bg-black/30 lg:hover:bg-black/30 lg:dark:hover:bg-black/30;
 
     .theme-text {
         @apply w-max text-sm md:text-base;
