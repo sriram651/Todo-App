@@ -1,6 +1,7 @@
-import Image from 'next/image'
 import React, { useState } from 'react'
-import Icon from '../Icon/Icon'
+
+import Image from 'next/image'
+import ThemeSwitcher from '../Theme/ThemeSwitcher';
 
 export default function Header() {
     const [toggleSidebar, setToggleSidebar] = useState(false);
@@ -22,9 +23,10 @@ export default function Header() {
                             </div>
                             <h1>Todo App</h1>
                         </div>
-                        <button onClick={() => setToggleSidebar(!toggleSidebar)}>
+                        <ThemeSwitcher />
+                        {/* <button onClick={() => setToggleSidebar(!toggleSidebar)} className="sidebar-toggle">
                             <Icon name={toggleSidebar ? "Cross1Icon" : "HamburgerIcon"} width={20} height={20} />
-                        </button>
+                        </button> */}
                     </div>
                 </div>
             </header>

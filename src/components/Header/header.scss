@@ -23,7 +23,11 @@ header {
                 }
             }
 
-            button {
+            .theme-switcher .theme-text {
+                @apply hidden;
+            }
+
+            button.sidebar-toggle {
                 @apply w-max p-2 flex lg:hidden active:bg-white/20 lg:hover:bg-black/20 rounded-full;
             }
         }

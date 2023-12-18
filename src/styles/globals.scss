@@ -10,6 +10,7 @@
 @import "@/components/TodoItem/todoItem.scss";
 @import "@/components/AddTodo/AddTodo.scss";
 @import "@/components/EmptyState/EmptyState.scss";
+@import "@/components/Theme/ThemeSwitcher.scss";
 
 $foreground-rgb: rgb(0, 0, 0);
 $background-start-rgb: rgb(214, 219, 220);
@@ -36,7 +37,11 @@ $background-end-rgb: rgb(255, 255, 255);
 }
 
 body {
-    @apply text-black dark:text-white bg-primary dark:bg-primaryDark;
+    @apply text-black bg-primary;
+    
+    &.dark {
+        @apply text-white bg-primaryDark;
+    }
 }
 
 main {
