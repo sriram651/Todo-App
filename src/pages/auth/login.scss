@@ -1,0 +1,70 @@
+div.login-page-container {
+    @apply w-full h-screen flex items-center animate-appearUpwards;
+
+    section.login-page {
+        @apply w-full h-max max-w-screen-2xl mx-auto flex items-center;
+
+        .login-content {
+            @apply w-full h-max px-10 py-6 max-w-sm md:max-w-lg mx-auto flex flex-col justify-center items-center gap-4 lg:gap-6 bg-secondary/40 dark:bg-secondaryDark/60 backdrop-blur-xl border border-secondary/20 dark:border-secondaryDark/20 rounded-2xl shadow-xl;
+
+            .login-form {
+                @apply w-full flex flex-col justify-start items-start gap-4;
+
+                .form-error {
+                    @apply w-full text-center text-base text-red-600;
+                }
+
+                .input-container {
+                    @apply w-full flex flex-col justify-start items-start gap-0.5; 
+    
+                    label {
+                        @apply w-full text-left text-sm md:text-base font-medium tracking-wide;
+                    }
+
+                    input {
+                        @apply w-full px-4 py-2 outline-none border border-secondary/40 dark:border-secondaryDark/40 bg-transparent rounded-lg transition-colors duration-100 ease-in;
+
+                        &:not(.error) {
+                            &:hover,
+                            &:focus {
+                                @apply border-secondary dark:border-secondaryDark;
+                            }
+                        }
+
+                        &.error {
+                            @apply border-red-600;
+                        }
+                    }
+
+                    .input-error-message {
+                        @apply w-max max-w-full text-red-600 text-sm;
+                    }
+                }
+
+                button {
+                    @apply relative w-max px-6 py-2 mx-auto bg-purple-700 outline-none rounded-lg overflow-clip;
+
+                    &::after {
+                        @apply absolute top-0 left-0 w-full h-full bg-white/20 scale-x-0 origin-left transition-transform duration-150 ease-linear;
+
+                        content: "";
+                    }
+
+                    &:not(:disabled) {
+                    
+                        &:hover,
+                        &:focus {
+                            &::after {
+                                @apply scale-x-100;
+                            }
+                        }
+                    }
+
+                    &:disabled {
+                        @apply opacity-50;
+                    }
+                }
+            }
+        }
+    }
+}

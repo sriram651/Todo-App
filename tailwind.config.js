@@ -15,12 +15,14 @@ module.exports = {
       backgroundColor: {
         primary: "#ffffff",
         primaryDark: "#111827",
-        secondary: "#F1F5F9",
-        secondaryDark: "#1E293B",
+        secondary: "#dbdbdb",
+        secondaryDark: "#000c17",
       },
       borderColor: {
         primary: "#000000",
         primaryDark: "#ffffff",
+        secondary: "#1E293B",
+        secondaryDark: "#F1F5F9",
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

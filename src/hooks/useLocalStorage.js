@@ -12,7 +12,7 @@ export const useLocalStorage = (key) => {
             const item = JSON.parse(localStorage.getItem(key));
             return item;
         } catch (e) {
-            console.log(e.message);
+            // console.log(e.message);
             return undefined;
         }
     }
