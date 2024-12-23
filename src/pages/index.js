@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import AddTodo from "@/components/AddTodo/AddTodo";
 import EmptyState from "@/components/EmptyState/EmptyState";
 import Head from "next/head";
+import { Reorder } from "framer-motion";
 import TodoItem from "@/components/TodoItem/TodoItem";
 import { useLocalStorage } from "@/hooks/useLocalStorage";
 
@@ -38,15 +39,19 @@ export default function Home() {
         <title>Home | Todo App</title>
       </Head>
       <section className="todo-page w-full p-4 xl:px-0 flex flex-col items-center justify-start gap-4 md:gap-8">
-        <AddTodo onModifyTodo={onModifyTodo}/>
+        <AddTodo onModifyTodo={onModifyTodo} />
         <ul className="todo-list w-full flex flex-col items-center justify-start gap-4">
           <h1 className="text-3xl font-bold w-full text-left">Your Todo&apos;s</h1>
-          {todoList?.length !== 0 ? (
-            todoList?.map((todo, index) => (
-            <TodoItem key={index} index={index} todo={todo} handleDelete={deleteItem} />
-          ))) : (
-            <EmptyState emptyStateMessage="There are no tasks on your to-do list. Let's get started by adding a new one!"/>
-          )}
+          <Reorder.Group values={todoList} onReorder={setTodoList} className=" w-full flex flex-col items-center justify-start gap-4">
+            {todoList?.length !== 0 ? (
+              todoList?.map((todo, index) => (
+                <Reorder.Item value={todo} key={index}>
+                  <TodoItem  index={index} todo={todo} handleDelete={deleteItem} />
+                </Reorder.Item>
+              ))) : (
+              <EmptyState emptyStateMessage="There are no tasks on your to-do list. Let's get started by adding a new one!" />
+            )}
+          </Reorder.Group>
         </ul>
       </section>
     </>
